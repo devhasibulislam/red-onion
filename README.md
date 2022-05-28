@@ -1,1 +1,1 @@
-# Red Onion - Client Side
+# Red Onion
