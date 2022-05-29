@@ -12,6 +12,7 @@ const CallToAction = () => {
             setCTA(response);
         }; getCTA();
     }, []);
+    
     return (
         <section
             className='container my-5'
@@ -45,6 +46,8 @@ const CallToAction = () => {
 };
 
 function Card({ callToAction }) {
+    const [readMore, setReadMore] = useState(false);
+
     return (
         <div
             className='col-4'
@@ -64,7 +67,7 @@ function Card({ callToAction }) {
                         src={callToAction?.thumbnail}
                         alt="thumb"
                         id='cta-thumb'
-                        className='me-3'
+                        className='me-3 border border-3 border-danger'
                     />
                 </div>
                 <div>
@@ -77,7 +80,14 @@ function Card({ callToAction }) {
                         <p
                             className='text-muted'
                         >
-                            {callToAction?.description}
+                            {!readMore ? callToAction?.description.slice(0, 100) + "..." : callToAction?.description}
+                            <span
+                                className='text-danger'
+                                role={"button"}
+                                onClick={()=>setReadMore(!readMore)}
+                            >
+                                {!readMore && "Read more"}
+                            </span>
                         </p>
                     </div>
                 </div>
