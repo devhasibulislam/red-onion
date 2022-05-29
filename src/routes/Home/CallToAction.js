@@ -4,7 +4,7 @@ import './css/CallToAction.css'
 const CallToAction = () => {
     const [CTA, setCTA] = useState([]);
     useEffect(() => {
-        const url = `cta.json`;
+        const url = `/cta.json`;
         const getCTA = async () => {
             const request = await fetch(url);
             const response = await request.json();

@@ -1,44 +1,38 @@
 [
     {
         "id": 1,
-        "title": "Healthy Meal Plan",
+        "title": "Salmon with Grapefruit and Lentil Salad",
         "description": "Nondisp commnt suprcndl fx w/o intrcndl fx unsp humer, 7thG",
-        "thumbnail": "/images/lunch/lunch1.png",
-        "price": 75
+        "thumbnail": "/images/dinner/dinner1.png"
     },
     {
         "id": 2,
-        "title": "Fried Chicken Bento",
+        "title": "Lemony Salmon Piccata",
         "description": "Nondisp fx of sternal end of right clavicle, init for opn fx",
-        "thumbnail": "/images/lunch/lunch2.png",
-        "price": 55
+        "thumbnail": "/images/dinner/dinner2.png"
     },
     {
         "id": 3,
-        "title": "Tarrangon Rubbed Salmon",
+        "title": "Pork Tenderloin with Quinoa Pilaf",
         "description": "Occ of rail trn/veh injured due to object falling onto train",
-        "thumbnail": "/images/lunch/lunch3.png",
-        "price": 69
+        "thumbnail": "/images/dinner/dinner3.png"
     },
     {
         "id": 4,
-        "title": "Indian Lunch",
+        "title": "French fries with Cheese",
         "description": "Focal chorioretin inflammation of posterior pole, bilateral",
-        "thumbnail": "/images/lunch/lunch4.png",
-        "price": 83
+        "thumbnail": "/images/dinner/dinner4.png"
     },
     {
         "id": 5,
-        "title": "Beef Steak",
+        "title": "Garlic Butter Baked Salmon",
         "description": "Fall into natural body of water striking water surface",
-        "thumbnail": "/images/lunch/lunch5.png",
-        "price": 99
+        "thumbnail": "/images/dinner/dinner5.png"
     },
     {
         "id": 6,
-        "title": "Homey Soy Glazed Salmon with Peppers",
+        "title": "Baked Chicken",
         "description": "Nondisp commnt fx shaft of l tibia, 7thG",
-        "thumbnail": "/images/lunch/lunch6.png",
-        "price": 41
+        "thumbnail": "/images/dinner/dinner6.png"
     }
 ]

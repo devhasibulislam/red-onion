@@ -11,15 +11,20 @@ const Home = () => {
             <nav
                 className='my-5 container'
             >
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <Link class="nav-link text-danger" to="/home/breakfast">Breakfast</Link>
+                <ul className="nav justify-content-center mb-5">
+                    <li className="nav-item">
+                        <Link
+                            className={`nav-link text-danger`}
+                            to="/home/breakfast"
+                        >
+                            Breakfast
+                        </Link>
                     </li>
-                    <li class="nav-item">
-                        <Link class="nav-link text-danger" to="/home/lunch">Lunch</Link>
+                    <li className="nav-item">
+                        <Link className={`nav-link text-danger`} to="/home/lunch">Lunch</Link>
                     </li>
-                    <li class="nav-item">
-                        <Link class="nav-link text-danger" to="/home/dinner">Dinner</Link>
+                    <li className="nav-item">
+                        <Link className={`nav-link text-danger`} to="/home/dinner">Dinner</Link>
                     </li>
                 </ul>
                 <Outlet />
