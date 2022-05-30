@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo2.png';
+import Cart from './Cart';
 
 const Header = () => {
     const navigate = useNavigate();
+    const [openCart, setOpenCart] = useState(false);
 
     return (
         <section
@@ -30,12 +32,25 @@ const Header = () => {
                 <div
                     className='d-flex align-items-center'
                 >
-                    <div>
+                    <div
+                        className='position-relative'
+                    >
                         <i
                             className="fa fa-shopping-cart me-2 fs-5 p-2 border border-danger rounded-circle"
                             aria-hidden="true"
                             role={'button'}
+                            onClick={()=>setOpenCart(!openCart)}
                         />
+                        {
+                            openCart
+                            &&
+                            <div
+                                className='position-absolute top-100 start-0'
+                                style={{ width: "200px" }}
+                            >
+                                <Cart />
+                            </div>
+                        }
                     </div>
                     <div>
                         <Button
@@ -48,7 +63,7 @@ const Header = () => {
                         <Button
                             variant="danger"
                             className='rounded-pill ms-2 px-4'
-                            onClick={()=>navigate('/register')}
+                            onClick={() => navigate('/register')}
                         >
                             Sign up
                         </Button>

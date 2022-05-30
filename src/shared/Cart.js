@@ -2,8 +2,10 @@ import React from 'react';
 
 const Cart = () => {
     return (
-        <div>
-            <h2>This is Cart route</h2>
+        <div
+            className='bg-danger rounded text-center'
+        >
+            <p>This is Cart route</p>
         </div>
     );
 };
