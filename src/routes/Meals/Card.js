@@ -3,11 +3,17 @@ import { Card } from 'react-bootstrap';
 import './Card.css';
 
 const Cards = ({ meal }) => {
-    const { title, description, thumbnail, price } = meal;
+    const { id, title, description, thumbnail, price } = meal;
+
+    const handleMealDetail = (id) => {
+        console.log('product id:', id);
+    };
+    
     return (
         <div
             className='col-4 pt-2'
             id='card-select'
+            onClick={()=>handleMealDetail(id)}
         >
             <Card
                 style={{ width: '18rem' }}

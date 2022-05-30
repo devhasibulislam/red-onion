@@ -8,7 +8,6 @@ const Lunch = () => {
         const getBreakfast = async () => {
             const request = await fetch(url);
             const response = await request.json();
-            console.log(response);
             setBreakfasts(response);
         }; getBreakfast();
     }, []);
