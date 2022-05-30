@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo2.png';
 
 const Header = () => {
+    const navigate = useNavigate();
+
     return (
         <section
             className='bg-white py-3 shadow'
@@ -39,12 +41,14 @@ const Header = () => {
                         <Button
                             variant="light"
                             className='rounded-pill mx-2 px-4'
+                            onClick={() => navigate('/login')}
                         >
                             Sign in
                         </Button>
                         <Button
                             variant="danger"
                             className='rounded-pill ms-2 px-4'
+                            onClick={()=>navigate('/register')}
                         >
                             Sign up
                         </Button>

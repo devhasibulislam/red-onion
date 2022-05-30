@@ -1,6 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './routes/Home/Home';
+import Login from './routes/Login/Login';
+import Register from './routes/Login/Register';
+import Reset from './routes/Login/Reset';
 import Breakfast from './routes/Meals/Breakfast';
 import Dinner from './routes/Meals/Dinner';
 import Lunch from './routes/Meals/Lunch';
@@ -16,6 +19,7 @@ function App() {
           path='/'
           element={<Home />}
         />
+        {/* nested route for meals */}
         <Route
           path='/home'
           element={<Home />}
@@ -33,6 +37,19 @@ function App() {
             element={<Dinner />}
           />
         </Route>
+        {/* routes for rest */}
+        <Route
+          path='/login'
+          element={<Login />}
+        />
+        <Route
+          path='/register'
+          element={<Register />}
+        />
+        <Route
+          path='/reset'
+          element={<Reset />}
+        />
       </Routes>
       <Footer />
     </section>
