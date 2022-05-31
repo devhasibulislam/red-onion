@@ -1,12 +1,22 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Card.css';
 
-const Cards = ({ meal }) => {
+const Cards = ({ meal, setDisplayItems }) => {
     const { id, title, description, thumbnail, price } = meal;
+    const navigate = useNavigate();
 
     const handleMealDetail = (id) => {
-        console.log('product id:', id);
+        setDisplayItems(false);
+        
+        if (id[0] === 'b') {
+            navigate(`/home/breakfast/menuItem/${id}`);
+        } else if (id[0] === 'l') {
+            navigate(`/home/lunch/menuItem/${id}`);
+        } else if (id[0] === 'd') {
+            navigate(`/home/dinner/menuItem/${id}`);
+        }
     };
     
     return (

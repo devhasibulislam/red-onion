@@ -7,6 +7,7 @@ import Reset from './routes/Login/Reset';
 import Breakfast from './routes/Meals/Breakfast';
 import Dinner from './routes/Meals/Dinner';
 import Lunch from './routes/Meals/Lunch';
+import MenuItem from './routes/Meals/MenuItem';
 import Footer from "./shared/Footer";
 import Header from "./shared/Header";
 
@@ -27,15 +28,30 @@ function App() {
           <Route
             path='breakfast'
             element={<Breakfast />}
-          />
+          >
+            <Route
+              path='menuItem/:id'
+              element={<MenuItem />}
+            />
+          </Route>
           <Route
             path='lunch'
             element={<Lunch />}
-          />
+          >
+            <Route
+              path='menuItem/:id'
+              element={<MenuItem />}
+            />
+          </Route>
           <Route
             path='dinner'
             element={<Dinner />}
-          />
+          >
+            <Route
+              path='menuItem/:id'
+              element={<MenuItem />}
+            />
+          </Route>
         </Route>
         {/* routes for rest */}
         <Route
