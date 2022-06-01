@@ -1,12 +1,16 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo2.png';
+import auth from '../firebase.init';
 import Cart from './Cart';
 
 const Header = () => {
     const navigate = useNavigate();
     const [openCart, setOpenCart] = useState(false);
+    const [user, loading] = useAuthState(auth);
 
     return (
         <section
@@ -39,7 +43,7 @@ const Header = () => {
                             className="fa fa-shopping-cart me-2 fs-5 p-2 border border-danger rounded-circle"
                             aria-hidden="true"
                             role={'button'}
-                            onClick={()=>setOpenCart(!openCart)}
+                            onClick={() => setOpenCart(!openCart)}
                         />
                         {
                             openCart
@@ -52,22 +56,46 @@ const Header = () => {
                             </div>
                         }
                     </div>
-                    <div>
-                        <Button
-                            variant="light"
-                            className='rounded-pill mx-2 px-4'
-                            onClick={() => navigate('/login')}
-                        >
-                            Sign in
-                        </Button>
-                        <Button
-                            variant="danger"
-                            className='rounded-pill ms-2 px-4'
-                            onClick={() => navigate('/register')}
-                        >
-                            Sign up
-                        </Button>
-                    </div>
+                    {
+                        user
+                            ?
+                            <div>
+                                <button
+                                    type="button"
+                                    className="btn btn-danger position-relative rounded-pill"
+                                    onClick={()=> signOut(auth)}
+                                >
+                                    <span className='fw-bold'>Logout</span>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                                        {
+                                            loading
+                                                ?
+                                                '...'
+                                                :
+                                                user?.displayName?.split(' ')[0]
+                                        }
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </button>
+                            </div>
+                            :
+                            <div>
+                                <Button
+                                    variant="light"
+                                    className='rounded-pill mx-2 px-4'
+                                    onClick={() => navigate('/login')}
+                                >
+                                    Sign in
+                                </Button>
+                                <Button
+                                    variant="danger"
+                                    className='rounded-pill ms-2 px-4'
+                                    onClick={() => navigate('/register')}
+                                >
+                                    Sign up
+                                </Button>
+                            </div>
+                    }
                 </div>
             </div>
         </section>

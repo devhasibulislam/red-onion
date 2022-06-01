@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../../shared/Loading';
 import logo from './logo2.png';
 
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const handleSignIn = async (event) => {
+        event.preventDefault();
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        await signInWithEmailAndPassword(email, password);
+
+        event.target.reset();
+    };
+
+    if (user) {
+        console.log(user);
+    }
+
     return (
         <section
             className='my-5'
@@ -20,13 +45,44 @@ const Login = () => {
                         className='mw-100 w-50 '
                     />
                 </div>
-                <Form>
+
+                {/* firebase conduction */}
+                <div>
+                    {
+                        (loading)
+                        &&
+                        <Loading />
+                    }
+                    {
+                        (error)
+                        &&
+                        <div
+                            className="alert alert-danger mb-5"
+                            role="alert"
+                        >
+                            {error?.message}
+                        </div>
+                    }
+                    {
+                        user?.user
+                        &&
+                        <div
+                            className="alert alert-success mb-5"
+                            role="alert"
+                        >
+                            Successfully logged in for <b>{user?.user?.displayName}</b>
+                        </div>
+                    }
+                </div>
+
+                <Form onSubmit={handleSignIn}>
                     {/* ask for email */}
                     <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Control
                             type="email"
                             placeholder="Enter email"
                             className='bg-light'
+                            name='email'
                         />
                     </Form.Group>
 
@@ -36,6 +92,7 @@ const Login = () => {
                             type="password"
                             placeholder="Password"
                             className='bg-light'
+                            name='password'
                         />
                         <p
                             className='mt-2'

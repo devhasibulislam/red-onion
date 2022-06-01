@@ -19,7 +19,7 @@ const Cart = () => {
 
     return (
         <table
-            class="table table-hover bg-white rounded"
+            className="table table-hover bg-white rounded"
             style={{ width: "500px" }}
         >
             <thead>
@@ -37,13 +37,13 @@ const Cart = () => {
                     >
                         <th
                             scope="row"
-                            style={{verticalAlign: "middle"}}
+                            style={{ verticalAlign: "middle" }}
                         >
                             <i
-                                class="fa fa-times text-danger"
+                                className="fa fa-times text-danger"
                                 aria-hidden="true"
                                 role={'button'}
-                                onClick={()=>handleRemoveFromDB(matchedMeal?.id)}
+                                onClick={() => handleRemoveFromDB(matchedMeal?.id)}
                             ></i>
                         </th>
                         <td>
@@ -51,7 +51,7 @@ const Cart = () => {
                                 src={matchedMeal?.thumbnail}
                                 alt="product_image"
                                 className='mw-100'
-                                style={{width: "2rem"}}
+                                style={{ width: "2rem" }}
                             />
                         </td>
                         <td>{matchedMeal?.title}</td>

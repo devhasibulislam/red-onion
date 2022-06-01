@@ -106,7 +106,7 @@ const Footer = () => {
                                     >
                                         hasibulislam999</a>
                                 </p>
-                                <p><i class="fa fa-linkedin-square fs-5 me-2" aria-hidden="true"></i>
+                                <p><i className="fa fa-linkedin-square fs-5 me-2" aria-hidden="true"></i>
                                     <a target={'_blank'} rel="noreferrer"
                                         href={linkedin}
                                         className='text-white text-decoration-none'
