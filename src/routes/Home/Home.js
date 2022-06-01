@@ -1,10 +1,14 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import CustomLink from '../../utilities/CustomLink';
 import Banner from './Banner';
 import CallToAction from './CallToAction';
 
 const Home = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate('/home/breakfast');
+    }, []);
     return (
         <section>
             <Banner />

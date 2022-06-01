@@ -23,4 +23,15 @@ const getFromCart = () => {
     return items;
 }
 
-export default cartUnit;
+const removeFromCart = id => {
+    const existingItemsObject = localStorage.getItem('cart');
+    if (existingItemsObject) {
+        const existingItems = JSON.parse(existingItemsObject);
+        if (id in existingItems) {
+            delete existingItems[id];
+            localStorage.setItem('cart', JSON.stringify(existingItems));
+        }
+    }
+}
+
+export {cartUnit, removeFromCart};

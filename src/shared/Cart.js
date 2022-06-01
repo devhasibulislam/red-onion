@@ -1,4 +1,5 @@
 import React from 'react';
+import { removeFromCart } from '../utilities/cartUnit';
 import meals from './meals.json';
 
 const Cart = () => {
@@ -10,6 +11,11 @@ const Cart = () => {
         itemValues = Object.values(cartItems); // as qty -> array
         matchedMeals = meals.filter(meal => itemKeys.includes(meal?.id));
     }
+
+    const handleRemoveFromDB = (id) => {
+        removeFromCart(id);
+        window.location.reload();
+    };
 
     return (
         <table
@@ -29,7 +35,17 @@ const Cart = () => {
                     matchedMeals?.map((matchedMeal, index) => <tr
                         key={matchedMeal?.id}
                     >
-                        <th scope="row">{index + 1}</th>
+                        <th
+                            scope="row"
+                            style={{verticalAlign: "middle"}}
+                        >
+                            <i
+                                class="fa fa-times text-danger"
+                                aria-hidden="true"
+                                role={'button'}
+                                onClick={()=>handleRemoveFromDB(matchedMeal?.id)}
+                            ></i>
+                        </th>
                         <td>
                             <img
                                 src={matchedMeal?.thumbnail}

@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Home from './routes/Home/Home';
 import Login from './routes/Login/Login';
@@ -14,11 +13,6 @@ import Header from "./shared/Header";
 import NoMatch from './shared/NoMatch';
 
 function App() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate('/home/breakfast');
-  }, []);
-
   return (
     <section id="app">
       <Header />
