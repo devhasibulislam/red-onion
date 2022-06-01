@@ -5,6 +5,7 @@ import cartUnit from '../../utilities/cartUnit';
 const MenuItem = () => {
     const [meals, setMeals] = useState([]);
     const [QTY, setQTY] = useState(1);
+    const [gray, setGray] = useState(false);
     const { id } = useParams();
 
     let url;
@@ -28,6 +29,7 @@ const MenuItem = () => {
 
     const handleAddToCart = (id, qty) => {
         cartUnit(id, qty);
+        setGray(true);
     };
 
     return (
@@ -92,7 +94,8 @@ const MenuItem = () => {
                         </div>
                         <button
                             className='btn btn-danger rounded-pill mt-4'
-                            onClick={()=>handleAddToCart(id, QTY)}
+                            onClick={() => handleAddToCart(id, QTY)}
+                            disabled={gray}
                         >
                             <i className="fa fa-cart-plus me-2" aria-hidden="true"></i>
                             <span className=''>Add to cart</span>
