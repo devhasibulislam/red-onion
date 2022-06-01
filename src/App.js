@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css'
 import Home from './routes/Home/Home';
 import Login from './routes/Login/Login';
@@ -10,8 +11,14 @@ import Lunch from './routes/Meals/Lunch';
 import MenuItem from './routes/Meals/MenuItem';
 import Footer from "./shared/Footer";
 import Header from "./shared/Header";
+import NoMatch from './shared/NoMatch';
 
 function App() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/home/breakfast');
+  }, []);
+
   return (
     <section id="app">
       <Header />
@@ -65,6 +72,10 @@ function App() {
         <Route
           path='/reset'
           element={<Reset />}
+        />
+        <Route
+          path='*'
+          element={<NoMatch />}
         />
       </Routes>
       <Footer />

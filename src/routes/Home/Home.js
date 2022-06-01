@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import CustomLink from '../../utilities/CustomLink';
 import Banner from './Banner';
 import CallToAction from './CallToAction';
 
@@ -13,28 +14,28 @@ const Home = () => {
             >
                 <ul className="nav justify-content-center mb-5">
                     <li className="nav-item">
-                        <Link
+                        <CustomLink
                             className={`nav-link text-danger`}
                             to="/home/breakfast"
                         >
                             Breakfast
-                        </Link>
+                        </CustomLink>
                     </li>
                     <li className="nav-item">
-                        <Link
+                        <CustomLink
                             className={`nav-link text-danger`}
                             to="/home/lunch"
                         >
                             Lunch
-                        </Link>
+                        </CustomLink>
                     </li>
                     <li className="nav-item">
-                        <Link
+                        <CustomLink
                             className={`nav-link text-danger`}
                             to="/home/dinner"
                         >
                             Dinner
-                        </Link>
+                        </CustomLink>
                     </li>
                 </ul>
                 <Outlet />
