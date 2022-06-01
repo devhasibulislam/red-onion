@@ -20,7 +20,7 @@ const Header = () => {
             >
                 <div>
                     <Link
-                        to={'/'}
+                        to={'/home'}
                     >
                         <img
                             src={logo}
