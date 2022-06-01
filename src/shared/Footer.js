@@ -5,6 +5,13 @@ import logo from '../assets/images/logo.png';
 const Footer = () => {
     const customStyle = "width: 60px; background-color: #7c4dff; height: 2px";
     const year = new Date().getFullYear();
+
+    const facebook = 'https://www.facebook.com/hasibulislam999.dev/';
+    const twitter = 'https://twitter.com/hasibulislam999';
+    const stackoverflow = 'https://stackoverflow.com/users/16820211/hasibul-islam';
+    const linkedin = 'https://www.linkedin.com/in/hasibulislam999/';
+    const pofo = 'https://hasibulislam999.netlify.app/';
+
     return (
         <div>
             <footer
@@ -33,22 +40,16 @@ const Footer = () => {
                             {/* <!-- Grid column --> */}
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 {/* <!-- Links --> */}
-                                <h6 className="text-uppercase fw-bold">Products</h6>
+                                <h6 className="text-uppercase fw-bold">Job Productivity</h6>
                                 <hr
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ customStyle }}
                                 />
                                 <p>
-                                    <Link to="/" className="text-white">MDBootstrap</Link>
+                                    <a target={'_blank'} rel="noreferrer" href="https://drive.google.com/file/d/1Gdbax82oaBWz2_0-OYh44E7QvfB53wNS/view?usp=sharing" className="text-white">My Resume</a>
                                 </p>
                                 <p>
-                                    <Link to="/" className="text-white">MDWordPress</Link>
-                                </p>
-                                <p>
-                                    <Link to="/" className="text-white">BrandFlow</Link>
-                                </p>
-                                <p>
-                                    <Link to="/" className="text-white">Bootstrap Angular</Link>
+                                    <a target={'_blank'} rel="noreferrer" href="https://drive.google.com/file/d/1WPyODG14JDxSjZBbxt_mSlimP1O4R38e/view?usp=sharing" className="text-white">Cover Letter</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -62,16 +63,16 @@ const Footer = () => {
                                     style={{ customStyle }}
                                 />
                                 <p>
-                                    <Link to="/" className="text-white">Portfolio</Link>
+                                    <a target={'_blank'} rel="noreferrer" href={pofo} className="text-white">Portfolio</a>
                                 </p>
                                 <p>
-                                    <Link to="/" className="text-white">Become an Affiliate</Link>
+                                    <a target={'_blank'} rel="noreferrer" href={facebook} className="text-white">Facebook</a>
                                 </p>
                                 <p>
-                                    <Link to="/" className="text-white">Shipping Rates</Link>
+                                    <a target={'_blank'} rel="noreferrer" href={twitter} className="text-white">Twitter</a>
                                 </p>
                                 <p>
-                                    <Link to="/" className="text-white">Help</Link>
+                                    <a target={'_blank'} rel="noreferrer" href={stackoverflow} className="text-white">StackOverflow</a>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */}
@@ -84,24 +85,30 @@ const Footer = () => {
                                     className="mb-4 mt-0 d-inline-block mx-auto"
                                     style={{ customStyle }}
                                 />
-                                <p><i className="fa fa-home me-2"></i> Dhaka, Bangladesh</p>
                                 <p><i className="fa fa-envelope me-2"></i>
-                                    <a
+                                    <a target={'_blank'} rel="noreferrer"
                                         href="mailto:hasib143sl@gmail.com"
                                         className='text-white text-decoration-none'
                                     >
                                         hasib143sl@gmail.com</a>
                                 </p>
                                 <p><i className="fa fa-phone me-2"></i>
-                                    <a
+                                    <a target={'_blank'} rel="noreferrer"
                                         href="tel:+8801906315901"
                                         className='text-white text-decoration-none'
                                     >
                                         +880 1906-315901</a>
                                 </p>
                                 <p><i className="fa fa-github me-2 fs-5" aria-hidden="true"></i>
-                                    <a
+                                    <a target={'_blank'} rel="noreferrer"
                                         href="https://github.com/hasibulislam999"
+                                        className='text-white text-decoration-none'
+                                    >
+                                        hasibulislam999</a>
+                                </p>
+                                <p><i class="fa fa-linkedin-square fs-5 me-2" aria-hidden="true"></i>
+                                    <a target={'_blank'} rel="noreferrer"
+                                        href={linkedin}
                                         className='text-white text-decoration-none'
                                     >
                                         hasibulislam999</a>
