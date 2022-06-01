@@ -5,7 +5,7 @@ const Cart = () => {
         <div
             className='bg-danger rounded text-center'
         >
-            <p>This is Cart route</p>
+            <p className='text-white'>This is Cart route</p>
         </div>
     );
 };

@@ -21,10 +21,20 @@ const Home = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link text-danger`} to="/home/lunch">Lunch</Link>
+                        <Link
+                            className={`nav-link text-danger`}
+                            to="/home/lunch"
+                        >
+                            Lunch
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link text-danger`} to="/home/dinner">Dinner</Link>
+                        <Link
+                            className={`nav-link text-danger`}
+                            to="/home/dinner"
+                        >
+                            Dinner
+                        </Link>
                     </li>
                 </ul>
                 <Outlet />

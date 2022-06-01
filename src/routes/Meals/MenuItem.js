@@ -26,8 +26,8 @@ const MenuItem = () => {
 
     const meal = meals.filter(meal => meal.id === id);
 
-    const handleAddToCart = (meal) => {
-        cartUnit(meal);
+    const handleAddToCart = (id, qty) => {
+        cartUnit(id, qty);
     };
 
     return (
@@ -92,7 +92,7 @@ const MenuItem = () => {
                         </div>
                         <button
                             className='btn btn-danger rounded-pill mt-4'
-                            onClick={()=>handleAddToCart(meal)}
+                            onClick={()=>handleAddToCart(id, QTY)}
                         >
                             <i className="fa fa-cart-plus me-2" aria-hidden="true"></i>
                             <span className=''>Add to cart</span>

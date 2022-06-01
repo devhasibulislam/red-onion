@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo2.png';
-import cartUnit from '../utilities/cartUnit';
 import Cart from './Cart';
 
 const Header = () => {
     const navigate = useNavigate();
     const [openCart, setOpenCart] = useState(false);
-
-    const meal = cartUnit();
-    console.log(meal);
 
     return (
         <section
