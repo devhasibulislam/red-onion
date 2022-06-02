@@ -5,7 +5,7 @@ import Banner from './Banner';
 import CallToAction from './CallToAction';
 
 const Home = () => {
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const navigate = useNavigate();
     const cart = localStorage?.getItem('cart');
 
@@ -54,12 +54,14 @@ const Home = () => {
             </nav>
 
             <div
-                className='text-center'
+                className={`text-center ${visible && 'd-none'}`}
             >
                 <button
                     className='btn btn-danger'
-                    disabled={visible}
-                    onClick={() => navigate('/home/placeOrder')}
+                    onClick={() => {
+                        navigate('/home/placeOrder');
+                        setVisible(true);
+                    }}
                 >
                     Checkout your foods
                 </button>

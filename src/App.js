@@ -8,10 +8,12 @@ import Breakfast from './routes/Meals/Breakfast';
 import Dinner from './routes/Meals/Dinner';
 import Lunch from './routes/Meals/Lunch';
 import MenuItem from './routes/Meals/MenuItem';
+import OrderComplete from './routes/Meals/OrderComplete';
 import PlaceOrder from './routes/Meals/PlaceOrder';
 import Footer from "./shared/Footer";
 import Header from "./shared/Header";
 import NoMatch from './shared/NoMatch';
+import RequireAuth from './utilities/RequireAuth';
 
 function App() {
   return (
@@ -33,7 +35,11 @@ function App() {
           >
             <Route
               path='menuItem/:id'
-              element={<MenuItem />}
+              element={
+                <RequireAuth>
+                  <MenuItem />
+                </RequireAuth>
+              }
             />
           </Route>
           <Route
@@ -42,7 +48,11 @@ function App() {
           >
             <Route
               path='menuItem/:id'
-              element={<MenuItem />}
+              element={
+                <RequireAuth>
+                  <MenuItem />
+                </RequireAuth>
+              }
             />
           </Route>
           <Route
@@ -51,12 +61,28 @@ function App() {
           >
             <Route
               path='menuItem/:id'
-              element={<MenuItem />}
+              element={
+                <RequireAuth>
+                  <MenuItem />
+                </RequireAuth>
+              }
             />
           </Route>
           <Route
             path='placeOrder'
-            element={<PlaceOrder />}
+            element={
+              <RequireAuth>
+                <PlaceOrder />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='orderComplete'
+            element={
+              <RequireAuth>
+                <OrderComplete />
+              </RequireAuth>
+            }
           />
         </Route>
         {/* routes for rest */}

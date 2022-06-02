@@ -3,10 +3,12 @@ import { Button, Form, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import meals from './meals.json';
+import { useNavigate } from 'react-router-dom';
 
 const PlaceOrder = () => {
     const [user] = useAuthState(auth);
     const [visible, setVisible] = useState(false);
+    const navigate = useNavigate();
     
     const handlePlaceOrder = (event) => {
         event.preventDefault();
@@ -156,6 +158,7 @@ const PlaceOrder = () => {
 
                         <button
                             className='btn btn-outline-danger'
+                            onClick={() => navigate('/home/orderComplete')}
                         >
                             Place Order
                         </button>
