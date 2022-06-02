@@ -1,14 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import CustomLink from '../../utilities/CustomLink';
 import Banner from './Banner';
 import CallToAction from './CallToAction';
 
 const Home = () => {
+    const [visible, setVisible] = useState(true);
     const navigate = useNavigate();
+    const cart = localStorage?.getItem('cart');
+
     useEffect(() => {
         navigate('/home/breakfast');
-    }, []);
+        if (cart !== null) {
+            setVisible(false);
+        }
+    }, [cart]);
+
+
     return (
         <section>
             <Banner />
@@ -44,6 +52,18 @@ const Home = () => {
                 </ul>
                 <Outlet />
             </nav>
+
+            <div
+                className='text-center'
+            >
+                <button
+                    className='btn btn-danger'
+                    disabled={visible}
+                    onClick={() => navigate('/home/placeOrder')}
+                >
+                    Checkout your foods
+                </button>
+            </div>
 
             <CallToAction />
         </section>

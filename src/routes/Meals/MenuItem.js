@@ -30,6 +30,7 @@ const MenuItem = () => {
     const handleAddToCart = (id, qty) => {
         cartUnit(id, qty);
         setGray(true);
+        window.location.reload();
     };
 
     return (

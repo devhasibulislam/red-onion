@@ -63,10 +63,10 @@ const Header = () => {
                                 <button
                                     type="button"
                                     className="btn btn-danger position-relative rounded-pill"
-                                    onClick={()=> signOut(auth)}
+                                    onClick={() => signOut(auth)}
                                 >
                                     <span className='fw-bold'>Logout</span>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
                                         {
                                             loading
                                                 ?
@@ -74,7 +74,7 @@ const Header = () => {
                                                 :
                                                 user?.displayName?.split(' ')[0]
                                         }
-                                        <span class="visually-hidden">unread messages</span>
+                                        <span className="visually-hidden">unread messages</span>
                                     </span>
                                 </button>
                             </div>

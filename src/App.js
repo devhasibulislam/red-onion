@@ -8,6 +8,7 @@ import Breakfast from './routes/Meals/Breakfast';
 import Dinner from './routes/Meals/Dinner';
 import Lunch from './routes/Meals/Lunch';
 import MenuItem from './routes/Meals/MenuItem';
+import PlaceOrder from './routes/Meals/PlaceOrder';
 import Footer from "./shared/Footer";
 import Header from "./shared/Header";
 import NoMatch from './shared/NoMatch';
@@ -53,6 +54,10 @@ function App() {
               element={<MenuItem />}
             />
           </Route>
+          <Route
+            path='placeOrder'
+            element={<PlaceOrder />}
+          />
         </Route>
         {/* routes for rest */}
         <Route
