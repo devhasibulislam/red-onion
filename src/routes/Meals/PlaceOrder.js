@@ -29,10 +29,10 @@ const PlaceOrder = () => {
     return (
         <div>
             <div
-                className='grid row'
+                className='grid row justify-content-between'
             >
                 <div
-                    className='col-5'
+                    className='col-lg-5 col-12'
                 >
                     <Form onSubmit={handlePlaceOrder}>
                         {/* approach email */}
@@ -121,7 +121,7 @@ const PlaceOrder = () => {
                     </Form>
                 </div>
                 <div
-                    className='col-5'
+                    className='col-lg-5 col-12 mt-lg-0 mt-5'
                 >
                     <p>From <b>Gulshan Plaza Restaurant</b></p>
                     <p className='mb-1'>Arriving within 20 to 30 minutes</p>

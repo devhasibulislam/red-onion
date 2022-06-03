@@ -38,10 +38,10 @@ const MenuItem = () => {
             className={`${!id && 'd-none'} mt-5`}
         >
             <div
-                className='gird row justify-content-between'
+                className='d-flex'
             >
                 <div
-                    className='col-lg-5 col-12'
+                    className='w-50 pe-5'
                 >
                     <div>
                         <h2
@@ -105,7 +105,7 @@ const MenuItem = () => {
                     <div></div>
                 </div>
                 <div
-                    className='col-lg-5 col-12 mt-lg-0 mt-5'
+                    className='w-50 ps-5'
                 >
                     <img
                         src={meal[0]?.thumbnail}

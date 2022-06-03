@@ -49,7 +49,7 @@ function Card({ callToAction }) {
 
     return (
         <div
-            className='col-4'
+            className='col-lg-4 col-md-6 col-12'
         >
             <div>
                 <img
