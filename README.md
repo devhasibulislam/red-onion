@@ -22,11 +22,11 @@
 * react-bootstrap
 * react-router
 ## Make it your own:
-Paste following on your **terminal** at once:
+Paste following on your *terminal* at once:
 ```bash
 git clone https://github.com/hasibulislam999/red-onion-clinet.git
 cd red-onion-clinet
 npm install
 npm start
 ```
-finally press *enter* button
+finally press **enter** button
