@@ -20,9 +20,11 @@ const Header = () => {
                 className='d-flex 
                 align-items-center 
                 justify-content-between
-                container'
+                container flex-lg-row flex-md-row flex-column'
             >
-                <div>
+                <div
+                    className='text-lg-start text-md-start text-center mb-lg-0 mb-md-0 mb-3'
+                >
                     <Link
                         to={'/home'}
                     >
@@ -82,11 +84,14 @@ const Header = () => {
                                 </button>
                             </div>
                             :
-                            <div>
+                            <div
+                                className='d-flex'
+                            >
                                 <Button
                                     variant="light"
                                     className='rounded-pill mx-2 px-4'
                                     onClick={() => navigate('/login')}
+                                    style={{ whiteSpace: "nowrap" }}
                                 >
                                     Sign in
                                 </Button>
@@ -94,6 +99,7 @@ const Header = () => {
                                     variant="danger"
                                     className='rounded-pill ms-2 px-4'
                                     onClick={() => navigate('/register')}
+                                    style={{whiteSpace: "nowrap"}}
                                 >
                                     Sign up
                                 </Button>

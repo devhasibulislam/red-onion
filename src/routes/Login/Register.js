@@ -45,10 +45,11 @@ const Register = () => {
 
     return (
         <section
-            className='my-5'
+            className='my-5 grid row'
         >
+            <div className='col-lg-4 col-md-3 col-2'></div>
             <div
-                className='w-25 mx-auto'
+                className='col-lg-4 col-md-6 col-8 mx-auto'
             >
                 <div
                     className='mb-5 text-center'
@@ -163,6 +164,7 @@ const Register = () => {
                     </Link>
                 </p>
             </div>
+            <div className='col-lg-4 col-md-3 col-2'></div>
         </section>
     );
 };
