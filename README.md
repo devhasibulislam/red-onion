@@ -29,3 +29,4 @@ cd red-onion-clinet
 npm install
 npm start
 ```
+finally press *enter* button
