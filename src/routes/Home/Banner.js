@@ -24,7 +24,7 @@ const Banner = () => {
         >
             <div>
                 <div
-                    className='mb-4'
+                    className='mb-4 text-center'
                 >
                     <h1>Best food waiting for your belly</h1>
                 </div>

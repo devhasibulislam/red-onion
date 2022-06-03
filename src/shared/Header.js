@@ -49,8 +49,11 @@ const Header = () => {
                             openCart
                             &&
                             <div
-                                className='position-absolute top-100 start-0'
-                                style={{ width: "200px" }}
+                                className='position-absolute top-100'
+                                    style={{
+                                        width: "300px",
+                                        left: "-500%"
+                                    }}
                             >
                                 <Cart />
                             </div>
@@ -66,7 +69,7 @@ const Header = () => {
                                     onClick={() => signOut(auth)}
                                 >
                                     <span className='fw-bold'>Logout</span>
-                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
+                                    <span className="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-dark">
                                         {
                                             loading
                                                 ?

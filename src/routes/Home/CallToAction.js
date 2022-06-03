@@ -11,13 +11,13 @@ const CallToAction = () => {
             setCTA(response);
         }; getCTA();
     }, []);
-    
+
     return (
         <section
             className='container my-5'
         >
             <article
-                className='w-50'
+                className=''
             >
                 <h2
                     className='mb-2'
@@ -27,7 +27,7 @@ const CallToAction = () => {
                 <p
                     className='text-muted'
                 >
-                    Barton waited twenty always repair in within we do. An delighted offending curiosity my is dashwoods at. Boy prosperous increasing surrounded.
+                    Barton waited twenty always repair in within we do. An delighted offending curiosity <br /> my is dashwoods at. Boy prosperous increasing surrounded.
                 </p>
             </article>
             <div
@@ -83,7 +83,7 @@ function Card({ callToAction }) {
                             <span
                                 className='text-danger'
                                 role={"button"}
-                                onClick={()=>setReadMore(!readMore)}
+                                onClick={() => setReadMore(!readMore)}
                             >
                                 {!readMore && "Read more"}
                             </span>
