@@ -9,8 +9,9 @@ import Cart from './Cart';
 
 const Header = () => {
     const navigate = useNavigate();
-    const [openCart, setOpenCart] = useState(false);
     const [user, loading] = useAuthState(auth);
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
 
     return (
         <section
@@ -45,19 +46,21 @@ const Header = () => {
                             className="fa fa-shopping-cart me-2 fs-5 p-2 border border-danger rounded-circle"
                             aria-hidden="true"
                             role={'button'}
-                            onClick={() => setOpenCart(!openCart)}
+                            onClick={handleShow}
                         />
                         {
-                            openCart
+                            show
                             &&
                             <div
                                 className='position-absolute top-100'
-                                    style={{
-                                        width: "300px",
-                                        left: "-500%"
-                                    }}
+                                style={{
+                                    width: "300px",
+                                }}
                             >
-                                <Cart />
+                                <Cart
+                                    show={show}
+                                    setShow={setShow}
+                                />
                             </div>
                         }
                     </div>
@@ -99,7 +102,7 @@ const Header = () => {
                                     variant="danger"
                                     className='rounded-pill ms-2 px-4'
                                     onClick={() => navigate('/register')}
-                                    style={{whiteSpace: "nowrap"}}
+                                    style={{ whiteSpace: "nowrap" }}
                                 >
                                     Sign up
                                 </Button>
